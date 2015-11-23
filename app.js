@@ -8,7 +8,7 @@ var lib_func = require('lib_func');
 app.use(express.static('public'));
 
 app.get('/', function (req, res){
-    lib_func.createData();
+    lib_func.main();
     /*fs.writeFile("/tmp/test", "Hello", function(err) {
         if(err) {
             return console.log(err);
