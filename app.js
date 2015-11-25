@@ -15,9 +15,10 @@ app.get('/', function (req, res){
         }
         console.log("The file was saved!");
     });*/
+    res.end('done');
 });
 
 
 http.listen(3000, function(){
-    console.log('Server running on : '+this.address().port);
+    //console.log('Server running on : '+this.address().port);
 });
