@@ -4,7 +4,7 @@ $(document).ready(function(){
         var ctx = canvas.getContext('2d');
         getDataAndBuildCanvas(ctx);
     }else{
-        console.log('Canva don\'t supported !');
+        console.log('Canva not supported !');
     }
 });
 
