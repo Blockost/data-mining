@@ -12,10 +12,12 @@ app.get('/', function (req, res){
     res.sendFile(__dirname+'/index.html');
 });
 
+app.get('/data', function(req, res){
+    res.end(JSON.stringify(k_means.main()));
+});
+
 // Exécution de l'algo
 //k_nearest_neighbors.main();
-
-k_means.main();
 
 
 
