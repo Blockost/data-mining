@@ -12,8 +12,16 @@ app.get('/', function (req, res){
     res.sendFile(__dirname+'/index.html');
 });
 
+var data;
+
 app.get('/data', function(req, res){
-    res.end(JSON.stringify(k_means.main()));
+    data = k_means.main();
+    res.end(JSON.stringify(data));
+});
+
+app.get('/iterate', function(req, res){
+    data = k_means.iterate(data[0], data[1], data[2]);
+    res.end(JSON.stringify(data));
 });
 
 // Exécution de l'algo
