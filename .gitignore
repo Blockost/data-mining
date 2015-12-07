@@ -3,6 +3,7 @@ couistot/.idea/*
 couistot/META-INF/*
 couistot/out/*
 .idea/
+*.pdf
 
 # Compiled source #
 *.com
