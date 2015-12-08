@@ -3,14 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <title>Data Mining : k_means algorithm</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <style type="text/css">
-            canvas { border: 1px solid black; }
-        </style>
-        <canvas id="canvas" width="600" height="400"></canvas>
-        <button id="btn_iterate">Iterate</button>
-        <script src="jquery-1.11.1.min.js"></script>
-        <script src="buildContext.js"></script>
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h2> Data Mining : K-means Algorithm </h2>
+                </div>
+            </div>
+            <br>
+            <div class="row text-center">
+                <div class="col-sm-12 alert alert-info">
+                    <h4>Press "iterate" button to classify</h4>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-8">
+                    <canvas id="canvas" width="600" height="400"></canvas>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success" id="btn_iterate">GO GO ! <b>Iterate</b> ! GO GO</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/buildContext.js"></script>
     </body>
 </html>
