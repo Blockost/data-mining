@@ -3,13 +3,13 @@ $(document).ready(function(){
     if(canvas.getContext){
 
         var ctx = canvas.getContext('2d');
-        var selectpicker = $("#selectpicker");
+        var selectpicker = $(".selectpicker");
+        selectpicker.selectpicker();
         selectpicker.change(function(){
             run(ctx, $(this).val());
         });
 
         run(ctx, "/generateData");
-
 
     }else{
         console.log('Canvas not supported !');

@@ -3,12 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Data Mining : k_means algorithm</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-select.min.css">
+
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css"/>
         <link rel="stylesheet" href="css/style.css">
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/bootstrap-select.min.js"></script>
-        <script src="js/buildContext.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -22,7 +25,7 @@
                 <h4>Press "iterate" button to classify</h4>
                 <div class="row text-center">
                     <div class="col-sm-6">
-                        <select id="selectpicker">
+                        <select class="selectpicker" data-live-search="true">
                             <option value="/generateData" selected>Random clusters</option>
                             <option value="/readData?filename=Test-Clusters-Distincts.txt">Distincts clusters</option>
                             <option value="/readData?filename=Test-Clusters-Melanges.txt">Merged clusters</option>
@@ -37,12 +40,12 @@
                     <h4 id="inertie_inter" class="col-sm-6">Inertie inter classes : </h4>
                     <h4 id="inertie_intra" class="col-sm-6">Inertie intra classes : </h4>
                 </div>
-            </div>
-            <br>
+            </div>K
             <div class="row text-center">
                 <canvas id="canvas" width="1200" height="750"></canvas>
             </div>
         </div>
 
+        <script src="js/buildContext.js"></script>
     </body>
 </html>
