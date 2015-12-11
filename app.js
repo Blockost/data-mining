@@ -25,7 +25,7 @@ app.get('/iterate', function(req, res){
 });
 
 // Exécution de l'algo
-//k_nearest_neighbors.main();
+k_nearest_neighbors.main();
 
 fs.readFile('Test-Clusters-Distincts.txt', 'utf-8', function(err, data){
     if (err)
@@ -59,7 +59,7 @@ fs.readFile('Test-Clusters-Distincts.txt', 'utf-8', function(err, data){
 
     data = parsedTab;
 
-    console.log(data);
+    //console.log(data);
 });
 
 http.listen(3000, function(){
