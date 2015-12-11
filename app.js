@@ -27,7 +27,40 @@ app.get('/iterate', function(req, res){
 // Exécution de l'algo
 //k_nearest_neighbors.main();
 
+fs.readFile('Test-Clusters-Distincts.txt', 'utf-8', function(err, data){
+    if (err)
+        throw err;
+    var lignes = data.split("\n");
+    data = [];
+    lignes.forEach(function(element){
+        var tmp = element.split(" ");
+        data.push(tmp.slice(0, 2));
+    });
 
+    var parsedTab = [];
+    data.forEach(function(element){
+        lignes = [];
+        element.forEach(function(element_inside){
+           lignes.push(parseFloat(element_inside));
+        });
+        parsedTab.push(lignes);
+    });
+
+    data = parsedTab.slice(0, parsedTab.length - 1);
+
+    parsedTab = [];
+    data.forEach(function(element){
+        lignes = [];
+        element.forEach(function(element_inside){
+            lignes.push(element_inside);
+        });
+        parsedTab.push(lignes);
+    });
+
+    data = parsedTab;
+
+    console.log(data);
+});
 
 http.listen(3000, function(){
     console.log('Server running on : '+this.address().port);
