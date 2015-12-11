@@ -16,7 +16,7 @@ app.get('/', function (req, res){
 
 
 // Exécution de l'algo
-k_nearest_neighbors.main();
+//k_nearest_neighbors.main();
 
 var _data;
 
