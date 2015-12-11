@@ -4,10 +4,13 @@
         <meta charset="UTF-8">
         <title>Data Mining : k_means algorithm</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-select.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/buildContext.js"></script>
     </head>
     <body>
-
         <div class="container">
             <div class="row text-center">
                 <div class="col-sm-12">
@@ -18,7 +21,21 @@
             <div class="row text-center alert alert-info">
                 <h4>Press "iterate" button to classify</h4>
                 <div class="row text-center">
-                    <button class="btn btn-success" id="btn_iterate">GO GO ! <b>Iterate</b> ! GO GO</button>
+                    <div class="col-sm-6">
+                        <select id="selectpicker">
+                            <option value="/generateData" selected>Random clusters</option>
+                            <option value="/readData?filename=Test-Clusters-Distincts.txt">Distincts clusters</option>
+                            <option value="/readData?filename=Test-Clusters-Melanges.txt">Merged clusters</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-success" id="btn_iterate">GO GO ! <b>Iterate</b> ! GO GO</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <h4 id="inertie_inter" class="col-sm-6">Inertie inter classes : </h4>
+                    <h4 id="inertie_intra" class="col-sm-6">Inertie intra classes : </h4>
                 </div>
             </div>
             <br>
@@ -27,7 +44,5 @@
             </div>
         </div>
 
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/buildContext.js"></script>
     </body>
 </html>

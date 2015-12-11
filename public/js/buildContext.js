@@ -2,9 +2,14 @@ $(document).ready(function(){
     var canvas = $('#canvas').get(0);
     if(canvas.getContext){
 
-        var colorPalette = [];
         var ctx = canvas.getContext('2d');
-        run(ctx);
+        var selectpicker = $("#selectpicker");
+        selectpicker.change(function(){
+            run(ctx, $(this).val());
+        });
+
+        run(ctx, "/generateData");
+
 
     }else{
         console.log('Canvas not supported !');
@@ -25,20 +30,26 @@ function buildCanvas(ctx, data, colorPalette){
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.fillRect(element[0], element[1], 10, 10);
     });
+
+    $("#inertie_inter").text("Inertie inter classes : "+data[3]);
+    $("#inertie_intra").text("Inertie intra classes : "+data[4]);
 }
 
-function run(ctx){
-    $.get('/data', function(data){
+function run(ctx, url){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    $.get(url, function(data){
         var colorPalette = buildColorPalette(JSON.parse(data));
         buildCanvas(ctx, JSON.parse(data), colorPalette);
 
-        $("#btn_iterate").click(function(){
+
+        $("#btn_iterate").off('click').click(function(){
             $.get('/iterate', function(response){
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 buildCanvas(ctx, JSON.parse(response), colorPalette);
             });
         });
     });
+
 }
 
 function getRandomRGBColor(){
