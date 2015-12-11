@@ -16,7 +16,7 @@ app.get('/', function (req, res){
 
 
 // Exécution de l'algo
-//k_nearest_neighbors.main();
+k_nearest_neighbors.main();
 
 var _data;
 
@@ -40,6 +40,7 @@ app.get('/generateData', function(req, res){
 app.get('/iterate', function(req, res){
     _data = k_means.iterate(_data[0], _data[1], _data[2]);
     res.end(JSON.stringify(_data));
+    //console.log(data);
 });
 
 http.listen(3000);
