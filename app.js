@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var fs = require('fs');
-var k_nearest_neighbors_redo = require('k-nearest_neighbors_redo');
+//var k_nearest_neighbors_redo = require('k-nearest_neighbors_redo');
 
 var k_means = require('k-means');
 var utilities = require('utilities');
@@ -41,6 +41,6 @@ app.get('/iterate', function(req, res){
 
 
 //Exécution de l'algo PPV
-k_nearest_neighbors_redo.main();
+//k_nearest_neighbors_redo.main();
 
 http.listen(3000);
